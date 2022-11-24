@@ -1,0 +1,23 @@
+﻿@using Entities.Concrete
+@model Product
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="card container" style="width: 18rem;">
+        <img src="/Images/@Model.ImageUrl" class="card-img-top" alt="photo">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Name</h5>
+            <p class="card-text">@Model.Description</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item fs-4 text-end">@Model.Price ₺</li>
+        </ul>
+        <div class="card-body">
+            <a asp-action="Buy" asp-controller="Cart" asp-route-id="@Model.Id" class="btn btn-danger btn-sm float-end">Buy</a>
+        </div>
+    </div>
+</div>
+
